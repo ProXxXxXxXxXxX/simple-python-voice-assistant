@@ -6,7 +6,7 @@ Searches the wiki and gives you response <br>
 can open websites <br>
 
 # What I need to add:
-responds to prompts if didn't understand <br>
+responds to prompts it didn't understand <br>
 music controls <br>
 time functionality (currently can tell if its morning, evening or night but been distracted by other projects so haven't made it tell the exact time yet) <br>
 weather functionality <br>
