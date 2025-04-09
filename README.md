@@ -10,6 +10,7 @@ responds to prompts it didn't understand <br>
 music controls <br>
 time functionality (currently can tell if its morning, evening or night but been distracted by other projects so haven't made it tell the exact time yet) <br>
 weather functionality <br>
-
+<br>
+<br>
 
 this readme will be updated as I work on the project. 
