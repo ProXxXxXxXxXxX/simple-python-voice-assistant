@@ -84,6 +84,8 @@ if __name__=='__main__':
             results = wikipedia.summary(statement, sentences=3)
             speak("according to the wiki")
             speak(results)
+## TODO: If wikipedia cannot find the specified page, program crashes. 
+# need to find a fix for this and make the assistant answer "could not find page"
             
         
 #below opens pages when asked 
