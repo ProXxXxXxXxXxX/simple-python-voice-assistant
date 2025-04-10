@@ -14,6 +14,7 @@ import ecapture as ec
 import wolframalpha
 import json
 import requests
+import pyaudio
 
 number = 1
 print('Loading Walmart Siri lol')
@@ -35,7 +36,7 @@ def wishMe():
     elif hour>=12 and hour<18:
         speak("Good Afternoon!")
     else:
-        speak("Good evening!")
+        speak("Good Evening!")
 
 ## when program is started, start listening
 
