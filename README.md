@@ -1,4 +1,4 @@
-# simple-python-voice-assistant
+# Simple Python Voice Assistant
 A simple python voice assistant if you don't trust Alexa. (like me lol) <br>
 Built this because I don't trust commerical voice assistants, and figured it would be a fun project to work on. Currently it has very limited functionality, but in the future I plan to add things including music control, and better voice recognition. <br>
 <h2>Current functionality it has:</h2>
