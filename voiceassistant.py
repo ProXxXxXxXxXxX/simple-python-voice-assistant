@@ -81,33 +81,35 @@ if __name__=='__main__':
         if 'wikipedia' in statement:
             speak('Searching the wiki')
             statement = statement.replace("wikipedia", "")
-            sentences = 1
-            results = wikipedia.summary(statement, sentences=sentences)
-            speak("according to the wiki")
-            speak(results)
-            while True:
-                speak('learn more?')
-                response = takeCommand()
-                if 'yes' in response or 'sure' in response or 'ok' in response:
-                    sentences += 3  # increase the number of sentences to fetch
-                    try:
-                        results = wikipedia.summary(statement, sentences=sentences)
-                        speak(results)
-                    except wikipedia.exceptions.DisambiguationError as e:
-                        speak("Multiple results found. Please be more specific.")
+            sentences = 3
+            try:
+                results = wikipedia.summary(statement, sentences=sentences)
+                speak("according to the wiki")
+                speak(results)
+## asks if user would like the assistant to continue talking
+                while True:
+                    speak('continue?')
+                    response = takeCommand()
+                    if 'yes' in response or 'sure' in response or 'ok' in response:
+                        sentences += 3  # increase the number of sentences to fetch
+                        try:
+                            results = wikipedia.summary(statement, sentences=sentences)
+                            speak(results)
+                        except wikipedia.exceptions.DisambiguationError: #handling for errors
+                            speak("Multiple results found. Please be more specific.")
+                            break
+                        except wikipedia.exceptions.PageError: #handling for errors
+                            speak("No results found. Please try again.")
+                            break
+                    else:
+                        speak('okay')
                         break
-                    except wikipedia.exceptions.PageError as e:
-                        speak("No more results found. Please try again.")
-                        break
-                else:
-                    speak('okay')
-                    break
-                    
-
-## TODO: If wikipedia cannot find the specified page, program crashes. 
-# need to find a fix for this and make the assistant answer "could not find page"
+            except wikipedia.exceptions.PageError: #handling for errors
+                speak('No results found. Please try again.')
+                
+            except wikipedia.exceptions.DisambiguationError: #handling for errors
+                speak ('multiple results found. Please be more specific.')
             
-        
 #below opens pages when asked 
 
 
